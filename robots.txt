@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tracetherater.netlify.app/sitemap.xml
+Sitemap: https://tracetherater.github.io/sitemap.xml
