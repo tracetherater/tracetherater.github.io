@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfoliana — Show Bible | Trace The Rater</title>
+<link rel="canonical" href="https://tracetherater.github.io/portfoliana.html">
+<meta name="description" content="Check this out! Portfoliana by Trace The Rater — Diney, Lemey, Zachary, Sadie, Christopher, Emmaline.">
+<style>body{font-family:system-ui;max-width:900px;margin:0 auto;padding:22px;line-height:1.7;background:linear-gradient(180deg,#fff8f0,#e3f2fd)}img{max-width:100%;border-radius:16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.card{background:#fff;border-radius:16px;padding:14px;border:1px solid #eee}</style>
+</head>
+<body>
+<h1>Portfoliana — Check this out!</h1>
+<p><a href="/">← Back to Trace The Rater</a></p>
+<img src="rainbow-logo.JPG" alt="Rainbow">
+<img src="wizards-worth-the-magic-new.JPG" alt="Worth The Magic YouTube thumbnail - Check this out!" style="margin-top:14px">
+<h2>Check this out! Full Concept — My Wording</h2>
+<p>Check this out! Usually every night when I try to go to sleep, I get up from under my pillow and covers and grab my phone to do some chill stuff. Just like creators like LS Mark (Media critic) and MAFDOMiNUS (SML and Pop Culture Critic) have made their own concepts with story-driven videos, I've had thoughts of creating my own. So my characters would include of course Trace the Rater himself, as well as characters I visualized from my Trace: The Show/Diney and Friends imaginations (featuring my friends, family, co-workers, and the family of cousins Diney and Lemey Puppet (who are based on my Dinosaur hand puppet and long Lemur plush I got from Dave and Busters, but threw out because I had to clean my room back in April this year, but now are still in the Trace mix being turned into humans)) Diney is married to Alyssa Suzuki-Puppet and gave birth to 5 Wasian children (Diney is European while Alyssa is East Asian), meanwhile Lemey Puppet is married to Alyssa's own cousin Amy Suzuki-Puppet, again giving birth to Wasian children, but only 2. Zachary Suzuki is one of Lemey and Amy's two children who develops a relationship with a French girl named Sadianna “Sadie” Bellefleur. They then get cloned with Christopher Bellefleur being the racial flip of Zachary and gender flip of Sadie, and Emmaline Suzuki being the racial flip of Sadie and gender flip of Zachary. The show starts off with Trace showing up to meet with the manager of one of the local media station in his hometown, but the manager says that he will only recruit Trace if he builds his portfolio. I then head home and start my business plan! While I'm setting up my portfolio I then meet up with these original characters and possibly my friends, families, and coworkers from real life, if they are okay being represented in the show. I tell them about all the great news and they are so satisfied that I'm building my portfolio further. These characters serve as the basis for hangouts, interviewing, acting, and work; there could be special guests such as actual media professionals and popular characters! My show title could be Portfoliana, or something like that!</p>
+<h2>Check this out! Visual Sheet</h2>
+<div class="grid">
+<div class="card"><img src="trace-smiling.JPG"><p>Pitch Energy — Check this out!</p></div>
+<div class="card"><img src="trace-worried.JPG"><p>Setback Energy — Check this out!</p></div>
+<div class="card"><img src="trace-real-with-cartoon.JPG"><p>Real + Cartoon — Check this out!</p></div>
+<div class="card"><img src="wizards-worth-the-magic-new.JPG"><p>YouTube Thumbnail — Check this out!</p></div>
+</div>
+<h2>Check this out! Official Links</h2>
+<ul>
+<li>Facebook: https://www.facebook.com/share/19SvhKi3jN/?mibextid=wwXIfr</li>
+<li>Instagram: https://www.instagram.com/tracetherater?srtk=d2txMnppb3RqdnJ6&utm_source=qr</li>
+<li>YouTube: https://youtube.com/@tracetherater?si=9Jl0G8VtYfVIJ1CI</li>
+<li>TikTok: https://www.tiktok.com/@tracetherater</li>
+<li>Reddit: https://www.reddit.com/u/Ok_Change8763/s/WfZSESrqIA</li>
+<li>Substack: https://open.substack.com/pub/tracetherater</li>
+<li>LinkedIn: https://www.linkedin.com/in/trace-thompkins-7a8b1739b?utm_source=share_via&utm_content=profile&utm_medium=member_ios</li>
+</ul>
+<p><a href="/">← Back home — Check this out!</a></p>
+</body>
+</html>
