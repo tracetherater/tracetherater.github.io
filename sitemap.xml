@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -13,4 +12,8 @@
   <url>
     <loc>https://tracetherater.github.io/episodes.html</loc>
   </url>
+  <url><loc>https://tracetherater.github.io/articles.html</loc></url>
+  <url><loc>https://tracetherater.github.io/sunnyridge-3.html</loc></url>
+  <url><loc>https://tracetherater.github.io/schedule.html</loc></url>
 </urlset>
+
