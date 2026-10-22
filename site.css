@@ -67,3 +67,6 @@ a:focus-visible,button:focus-visible{outline:3px solid #075a97;outline-offset:4p
 
 /* Clip horizontal paint without turning the body into a scroll container. */
 html,body{overflow-x:clip!important;overflow-y:visible!important}
+
+/* Preserve the supplied SVG artwork without rasterizing or distorting it. */
+.ttr-banner img,.ttr-home img{object-fit:contain;image-rendering:auto;filter:none!important;transform:none!important}
