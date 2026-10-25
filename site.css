@@ -70,3 +70,8 @@ html,body{overflow-x:clip!important;overflow-y:visible!important}
 
 /* Preserve the supplied SVG artwork without rasterizing or distorting it. */
 .ttr-banner img,.ttr-home img{object-fit:contain;image-rendering:auto;filter:none!important;transform:none!important}
+
+/* Updated logo artwork, with its surrounding export whitespace removed. */
+.ttr-banner>a{width:min(580px,100%)}
+.ttr-home{flex-basis:150px}.ttr-home img{width:150px}
+@media(max-width:600px){.ttr-banner>a{width:min(320px,100%)}.ttr-home{flex-basis:125px}.ttr-home img{width:125px}}
