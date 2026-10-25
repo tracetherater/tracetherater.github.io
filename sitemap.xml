@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://tracetherater.github.io/</loc>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/assets/sunnyridge-3.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/wizards-worth-the-magic-new.JPG</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/trace-real-with-cartoon.JPG</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/trace-smiling.JPG</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/trace-worried.JPG</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://tracetherater.github.io/portfoliana.html</loc>
@@ -12,12 +28,31 @@
   <url>
     <loc>https://tracetherater.github.io/episodes.html</loc>
   </url>
-  <url><loc>https://tracetherater.github.io/articles.html</loc></url>
-  <url><loc>https://tracetherater.github.io/sunnyridge-3.html</loc></url>
+  <url>
+    <loc>https://tracetherater.github.io/articles.html</loc>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/assets/rating-system-poster.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/assets/sunnyridge-3.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tracetherater.github.io/sunnyridge-3.html</loc>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/assets/sunnyridge-3.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/assets/sunnyridge-3-poster.jpg</image:loc>
+    </image:image>
+  </url>
   <url><loc>https://tracetherater.github.io/schedule.html</loc></url>
   <url><loc>https://tracetherater.github.io/business-plan.html</loc></url>
   <url><loc>https://tracetherater.github.io/privacy.html</loc></url>
-  <url><loc>https://tracetherater.github.io/rating-system.html</loc></url>
+  <url>
+    <loc>https://tracetherater.github.io/rating-system.html</loc>
+    <image:image>
+      <image:loc>https://tracetherater.github.io/assets/rating-system-poster.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>
-
-
