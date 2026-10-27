@@ -30,6 +30,11 @@ a:focus-visible,button:focus-visible{outline:3px solid #075a97;outline-offset:4p
 .ttr-main p{margin-top:0;margin-bottom:1em}
 .ttr-main>header,.ttr-main .masthead{position:static!important;background:transparent!important;color:var(--ttr-ink)!important;text-align:left;overflow:visible;padding:0 0 24px!important;margin:0 0 24px;border-bottom:1px solid var(--ttr-border)}
 .ttr-main>section,.ttr-main>.section{margin:0 0 24px;padding:clamp(20px,3vw,30px);background:#fff;border:1px solid var(--ttr-border);border-radius:20px;box-shadow:0 8px 24px #17233208}
+.ttr-main>section.newsletter-section{padding:clamp(32px,7vw,72px);text-align:center;background:linear-gradient(120deg,#fff5dd,#e6f4ff 55%,#f3e5f5);border:2px solid var(--ttr-blue);box-shadow:0 12px 30px #17233214}
+.ttr-main .newsletter-section h2{max-width:24ch;margin:0 auto 16px;font-size:clamp(1.7rem,4vw,2.7rem)}
+.newsletter-intro{max-width:58ch;margin:0 auto 28px!important;font-size:clamp(1rem,2vw,1.15rem);font-weight:600}
+.newsletter-form{max-width:640px;margin:0 auto;padding:clamp(18px,4vw,32px);border:1px solid var(--ttr-border);border-radius:18px;background:#fff;box-shadow:0 8px 24px #17233212}
+.newsletter-note{margin:18px 0 0!important;font-size:.9rem;font-weight:600}
 .ttr-main .section{border-radius:20px}
 .ttr-main .grid{gap:20px}
 .ttr-main .grid:not([class*="grid-cols"]){display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
