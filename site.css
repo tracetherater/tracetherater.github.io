@@ -68,7 +68,11 @@ a:focus-visible,button:focus-visible{outline:3px solid #075a97;outline-offset:4p
 .ttr-main>section{padding:20px}.ttr-main #root>div>section{padding:18px!important}
 .ttr-footer{padding:28px 18px!important}
 }
-@media(max-width:600px){.newsletter-form iframe{position:relative!important;left:50%!important;transform:translateX(-50%)!important;width:400px!important;max-width:none!important}}
+@media(max-width:600px){
+.ttr-main>section.newsletter-section{width:calc(100% + 36px);margin-left:-18px;margin-right:-18px;padding:clamp(20px,6vw,32px) 12px}
+.ttr-main>section.newsletter-section .newsletter-form{width:100%;max-width:640px;padding:8px}
+.newsletter-form iframe{display:block!important;position:static!important;left:auto!important;transform:none!important;width:100%!important;max-width:100%!important;margin:0 auto!important}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}}
 
 /* Clip horizontal paint without turning the body into a scroll container. */
