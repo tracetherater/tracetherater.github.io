@@ -34,6 +34,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #075a97;outline-offset:4p
 .ttr-main .newsletter-section h2{max-width:24ch;margin:0 auto 16px;font-size:clamp(1.7rem,4vw,2.7rem)}
 .newsletter-intro{max-width:58ch;margin:0 auto 28px!important;font-size:clamp(1rem,2vw,1.15rem);font-weight:600}
 .newsletter-form{width:100%;max-width:640px;min-width:0;margin:0 auto;padding:clamp(18px,4vw,32px);overflow:hidden;border:1px solid var(--ttr-border);border-radius:18px;background:#fff;box-shadow:0 8px 24px #17233212}
+.newsletter-form>div>div{width:100%;max-width:330px;min-width:0;margin-inline:auto}
 .newsletter-note{margin:18px 0 0!important;font-size:.9rem;font-weight:600}
 .ttr-main .section{border-radius:20px}
 .ttr-main .grid{gap:20px}
