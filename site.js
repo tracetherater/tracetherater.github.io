@@ -16,7 +16,7 @@ const bar=document.getElementById('site-bar');
 if(!bar || document.getElementById('ttr-search'))return;
 const style=document.createElement('style');
 style.textContent=`
-.ttr-search{max-width:1100px;margin:0 auto;padding:18px 24px 0;color:#172332}
+.ttr-search{max-width:1100px;margin:0 auto;padding:12px 24px;color:#172332;border-top:1px solid #eef2f6}
 .ttr-search form{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .ttr-search label{font-weight:750}.ttr-search input{flex:1 1 220px;min-width:0;min-height:44px;padding:10px 14px;border:1px solid #8896a6;border-radius:10px;background:#fff;color:#172332;font:inherit}
 .ttr-search button{min-height:44px;padding:10px 18px;border:0;border-radius:10px;background:#075a97;color:white;font:700 16px system-ui;cursor:pointer}
@@ -24,13 +24,13 @@ style.textContent=`
 .ttr-search-results{margin-top:14px;padding:20px;background:#fff;border:1px solid #dce2e9;border-radius:16px}
 .ttr-search-results ul{padding-left:22px;margin:0}.ttr-search-results li{margin:16px 0}.ttr-search-results a{font-weight:750}
 .ttr-search-results p{margin:6px 0 0}.ttr-search-status{margin:10px 0;font-size:.95rem}
-@media(max-width:600px){.ttr-search{padding:16px 18px 0}.ttr-search label{flex-basis:100%}}
+@media(max-width:600px){.ttr-search{padding:12px 18px}.ttr-search label{flex-basis:100%}}
 `;
 document.head.append(style);
 const region=document.createElement('section');
 region.className='ttr-search';region.id='ttr-search';region.setAttribute('aria-label','Website search');
 region.innerHTML='<form role="search"><label for="ttr-search-query">Search the website</label><input id="ttr-search-query" type="search" maxlength="150" placeholder="Shows, music, articles…" autocomplete="off" aria-controls="ttr-search-results"><button type="submit">Search</button></form><p class="ttr-search-status" role="status" aria-live="polite"></p><div class="ttr-search-results" id="ttr-search-results" hidden></div>';
-bar.after(region);
+bar.append(region);
 const form=region.querySelector('form'),input=region.querySelector('input'),status=region.querySelector('[role="status"]'),results=region.querySelector('.ttr-search-results');
 const normalize=s=>s.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 const pageURL=value=>{
