@@ -91,3 +91,41 @@ let timer;
 input.addEventListener('input',()=>{clearTimeout(timer);serial++;timer=setTimeout(search,250);});
 form.addEventListener('submit',event=>{event.preventDefault();clearTimeout(timer);search();});
 })();
+
+/* Accessible manual carousel for the homepage highlights. */
+(()=>{
+'use strict';
+const carousel=document.querySelector('.ttr-highlights');
+if(!carousel)return;
+const slides=[...carousel.querySelectorAll('.ttr-highlight-slide')];
+const controls=carousel.querySelector('.ttr-highlight-controls');
+const pagination=carousel.querySelector('.ttr-highlight-pagination');
+const previous=carousel.querySelector('.ttr-highlight-previous');
+const next=carousel.querySelector('.ttr-highlight-next');
+const status=carousel.querySelector('.ttr-highlight-status');
+if(slides.length<2||!controls||!pagination||!previous||!next||!status)return;
+let current=0;
+const buttons=slides.map((slide,index)=>{
+const button=document.createElement('button');
+button.type='button';
+button.setAttribute('aria-label',`Show highlight ${index+1}: ${slide.querySelector('h3').textContent.trim()}`);
+button.setAttribute('aria-current',String(index===current));
+button.addEventListener('click',()=>show(index));
+pagination.append(button);
+return button;
+});
+function show(index,announce=true){
+current=(index+slides.length)%slides.length;
+slides.forEach((slide,slideIndex)=>{
+const active=slideIndex===current;
+slide.hidden=!active;
+buttons[slideIndex].setAttribute('aria-current',String(active));
+});
+if(announce)status.textContent=`Highlight ${current+1} of ${slides.length}: ${slides[current].querySelector('h3').textContent.trim()}`;
+}
+previous.addEventListener('click',()=>show(current-1));
+next.addEventListener('click',()=>show(current+1));
+carousel.classList.add('is-ready');
+controls.hidden=false;
+show(current,false);
+})();
