@@ -1,0 +1,39 @@
+name: Update Instagram gallery
+
+on:
+  schedule:
+    - cron: "41 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-instagram-gallery
+  cancel-in-progress: false
+
+jobs:
+  instagram:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Fetch Instagram media safely
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+        run: python scripts/update_instagram.py
+      - name: Commit updated public feed if changed
+        run: |
+          if git diff --quiet -- data/instagram-posts.json; then
+            echo "Instagram posts unchanged."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/instagram-posts.json
+            git commit -m "Update recent Instagram posts"
+            git push
+          fi
