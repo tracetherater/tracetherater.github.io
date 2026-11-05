@@ -127,3 +127,25 @@ html,body{overflow-x:clip!important;overflow-y:visible!important}
 .ttr-highlights.is-ready .ttr-highlight-copy{padding:4px 4px 8px}
 .ttr-highlight-controls{gap:8px}.ttr-highlight-controls>button{padding:8px 12px}
 }
+
+/* Read-only Instagram gallery populated from a scheduled, server-side API sync. */
+.ttr-instagram-feed{background:linear-gradient(120deg,#fff9fc,#f2f7ff)!important}
+.ttr-instagram-heading{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-bottom:14px}
+.ttr-instagram-heading h2{margin:0 0 8px}
+.ttr-instagram-heading p{margin:0}
+.ttr-instagram-heading>a{display:inline-block;min-height:44px;padding:10px 14px;border-radius:999px;background:#075a97;color:#fff;font-weight:750;text-decoration:none}
+.ttr-instagram-eyebrow{color:#a32673;font-size:.78rem;font-weight:850;letter-spacing:.12em}
+.ttr-instagram-status{color:#475467}
+.ttr-instagram-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ttr-instagram-card{min-width:0;overflow:hidden;border-radius:16px;border:1px solid #eadce9;background:#fff;box-shadow:0 4px 15px #1723320d}
+.ttr-instagram-card>a{display:block;color:inherit;text-decoration:none;height:100%}
+.ttr-instagram-media{aspect-ratio:1/1;background:linear-gradient(145deg,#eec6e6,#c5dffc);position:relative;display:grid;place-items:center;overflow:hidden}
+.ttr-instagram-media img{width:100%;height:100%;object-fit:cover;display:block}
+.ttr-instagram-media span{padding:14px;color:#4c2258;text-align:center;font-weight:800}
+.ttr-instagram-type{position:absolute;right:10px;top:10px;border-radius:999px;background:#101828df;color:#fff;font-weight:750;font-size:.75rem;padding:4px 10px}
+.ttr-instagram-copy{padding:12px 14px}
+.ttr-instagram-copy p{font-size:.89rem;line-height:1.55;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ttr-instagram-copy time{font-size:.78rem;color:#667085}
+.ttr-instagram-card a:hover .ttr-instagram-copy p{text-decoration:underline}
+@media(max-width:700px){.ttr-instagram-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:440px){.ttr-instagram-grid{gap:9px}.ttr-instagram-copy{padding:10px}.ttr-instagram-type{font-size:.68rem;right:6px;top:6px}}
