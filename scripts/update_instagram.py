@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "data" / "instagram-posts.json"
 FIELDS = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp"
-API = "https://graph.instagram.com/me/media"
+API = "https://graph.instagram.com/v25.0/me/media"
 
 
 def https_url(value):
