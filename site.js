@@ -92,6 +92,76 @@ input.addEventListener('input',()=>{clearTimeout(timer);serial++;timer=setTimeou
 form.addEventListener('submit',event=>{event.preventDefault();clearTimeout(timer);search();});
 })();
 
+/* Render the posts refreshed by the scheduled GitHub Actions workflow. */
+(()=>{
+'use strict';
+const list=document.querySelector('.ttr-latest-posts-list');
+const status=document.querySelector('.ttr-latest-posts-status');
+if(!list||!status)return;
+
+function safeUrl(value){
+try{
+const url=new URL(value,location.origin);
+return url.protocol==='https:'||url.protocol==='http:'?url:null;
+}catch{return null;}
+}
+
+function renderPost(post){
+if(!post||typeof post.title!=='string'||typeof post.source!=='string')return null;
+const url=safeUrl(post.url);
+if(!url)return null;
+
+const item=document.createElement('li');
+const card=document.createElement('article');
+const link=document.createElement('a');
+const source=document.createElement('p');
+const title=document.createElement('strong');
+card.className='card';
+link.href=url.href;
+link.target='_blank';
+link.rel='noopener noreferrer';
+title.textContent=post.title;
+link.append(title);
+source.className='ttr-latest-post-source';
+source.textContent=post.source;
+card.append(source,link);
+
+if(typeof post.summary==='string'&&post.summary){
+const summary=document.createElement('p');
+summary.textContent=post.summary;
+card.append(summary);
+}
+if(typeof post.publishedAt==='string'&&post.publishedAt){
+const timestamp=Date.parse(post.publishedAt);
+if(!Number.isNaN(timestamp)){
+const time=document.createElement('time');
+time.className='ttr-latest-post-date';
+time.dateTime=post.publishedAt;
+time.textContent=new Intl.DateTimeFormat(undefined,{dateStyle:'medium'}).format(timestamp);
+card.append(time);
+}
+}
+item.append(card);
+return item;
+}
+
+fetch('/data/latest-posts.json',{cache:'no-store'})
+.then(response=>{
+if(!response.ok)throw new Error(`HTTP ${response.status}`);
+return response.json();
+})
+.then(data=>{
+if(!data||!Array.isArray(data.posts))throw new Error('Invalid recent-posts data');
+const items=data.posts.map(renderPost).filter(Boolean);
+list.replaceChildren(...items);
+status.textContent=items.length?'Recent posts from Trace The Rater’s channels.':'No recent posts are available right now.';
+})
+.catch(error=>{
+console.error('Could not load recent posts:',error);
+status.textContent='Recent posts could not be loaded. Please use the social links below.';
+});
+})();
+
 /* Accessible manual carousel for the homepage highlights. */
 (()=>{
 'use strict';
