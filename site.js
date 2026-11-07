@@ -137,7 +137,9 @@ if(!Number.isNaN(timestamp)){
 const time=document.createElement('time');
 time.className='ttr-latest-post-date';
 time.dateTime=post.publishedAt;
-time.textContent=new Intl.DateTimeFormat(undefined,{dateStyle:'medium'}).format(timestamp);
+const dateOnly=/^\d{4}-\d{2}-\d{2}$/.test(post.publishedAt);
+const displayDate=dateOnly?new Date(...post.publishedAt.split('-').map(Number).map((value,index)=>index===1?value-1:value)):new Date(timestamp);
+time.textContent=new Intl.DateTimeFormat(undefined,{dateStyle:'medium'}).format(displayDate);
 card.append(time);
 }
 }

@@ -1,3 +1,18 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "source": "Website",
+      "title": "Ren & Stimpy vs. Regular Show: Which Cartoon Is Better? My Full Review!",
+      "url": "https://tracetherater.github.io/ren-stimpy-vs-regular-show.html",
+      "publishedAt": "2026-11-06",
+      "summary": "Trace compares animation, characters, writing, humor, and sound: Ren & Stimpy earns 8.7/10 and Regular Show earns 9/10."
+    },
+    {
+      "source": "YouTube",
+      "title": "Ren & Stimpy vs. Regular Show: Full Video Review",
+      "url": "https://youtu.be/I0tWrvcxCtc",
+      "publishedAt": "2026-11-06",
+      "summary": "Watch Trace's full video review comparing The Ren & Stimpy Show and Regular Show."
+    }
+  ]
 }
