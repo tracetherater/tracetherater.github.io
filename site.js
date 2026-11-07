@@ -1,3 +1,15 @@
+/* Keep the official shop reachable in the shared site directory and footer. */
+document.querySelectorAll('.ttr-nav, .ttr-footer nav').forEach(nav=>{
+  if(nav.querySelector('a[href="https://tracetherater-shop.fourthwall.com/"]'))return;
+  const link=document.createElement('a');
+  link.href='https://tracetherater-shop.fourthwall.com/';
+  link.textContent='Shop Merch ↗';
+  link.target='_blank';
+  link.rel='noopener noreferrer';
+  const newsletter=nav.querySelector('a[href$="#newsletter"]');
+  if(newsletter)newsletter.before(link);else nav.append(link);
+});
+
 /* Keep Favorites reachable from pages with the shared navigation. */
 document.querySelectorAll('.ttr-nav, .ttr-footer nav').forEach(nav=>{
   if(nav.querySelector('a[href="favorites.html"]'))return;
