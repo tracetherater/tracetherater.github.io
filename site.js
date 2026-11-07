@@ -210,6 +210,17 @@ const root=document.documentElement;
 const key='ttr-theme';
 function apply(theme){
   root.dataset.ttrTheme=themes.includes(theme)?theme:'blue';
+  const logos={
+    blue:'/assets/trace-logo-november-black-stars.svg',
+    yellow:'/assets/trace-logo-november-white-stars.svg',
+    white:'/assets/trace-logo-november-main.svg',
+    black:'/assets/trace-logo-november-white-text.svg'
+  };
+  document.querySelectorAll('.ttr-banner img, .ttr-home img').forEach(image=>{
+    image.src=logos[root.dataset.ttrTheme];
+    image.width=1226;image.height=1010;
+    image.alt='Trace The Rater — Media & Lifestyle Journalism';
+  });
 }
 let saved;
 try{saved=localStorage.getItem(key);}catch{}

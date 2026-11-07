@@ -178,3 +178,14 @@ html .ttr-skip{background:var(--ttr-surface);color:var(--ttr-blue)}
 /* The supplied multicolor logos remain legible on a white artwork plate. */
 [data-ttr-theme="black"] .ttr-banner>a,[data-ttr-theme="black"] .ttr-home{background:#fff;border-radius:12px}
 @media(max-width:480px){.ttr-theme-picker{order:3;flex-basis:100%;justify-content:flex-end}.ttr-theme-select{flex:1;max-width:220px}}
+
+/* November artwork: preserve the supplied paths and trim only export whitespace. */
+:root{--ttr-logo-bg:#07558b}
+[data-ttr-theme="blue"]{--ttr-logo-bg:#07558b}
+[data-ttr-theme="yellow"]{--ttr-logo-bg:#d9a500}
+[data-ttr-theme="white"]{--ttr-logo-bg:#fff}
+[data-ttr-theme="black"]{--ttr-logo-bg:#121212}
+html .ttr-banner::before{background:var(--ttr-logo-bg)}
+html .ttr-home,html[data-ttr-theme="black"] .ttr-home{background:var(--ttr-logo-bg);border-radius:12px}
+html[data-ttr-theme="black"] .ttr-banner>a{background:transparent}
+html .ttr-banner img,html .ttr-home img{aspect-ratio:1226/1010;height:auto}
