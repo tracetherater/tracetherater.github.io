@@ -149,3 +149,32 @@ html,body{overflow-x:clip!important;overflow-y:visible!important}
 .ttr-instagram-card a:hover .ttr-instagram-copy p{text-decoration:underline}
 @media(max-width:700px){.ttr-instagram-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:440px){.ttr-instagram-grid{gap:9px}.ttr-instagram-copy{padding:10px}.ttr-instagram-type{font-size:.68rem;right:6px;top:6px}}
+
+/* Four site-wide color modes. Keep artwork and embedded media unchanged. */
+:root,[data-ttr-theme="blue"]{--ttr-bg:#e6f2ff;--ttr-surface:#f7fbff;--ttr-soft:#d5e9fc;--ttr-ink:#102e4d;--ttr-blue:#07558b;--ttr-border:#98bad9;--ttr-accent:#126caa;--ttr-on-accent:#fff;color-scheme:light}
+[data-ttr-theme="yellow"]{--ttr-bg:#fff0a6;--ttr-surface:#fffbee;--ttr-soft:#ffe17b;--ttr-ink:#392c08;--ttr-blue:#674600;--ttr-border:#b99a3e;--ttr-accent:#644500;--ttr-on-accent:#fff;color-scheme:light}
+[data-ttr-theme="white"]{--ttr-bg:#fff;--ttr-surface:#fff;--ttr-soft:#f1f3f5;--ttr-ink:#172332;--ttr-blue:#075a97;--ttr-border:#bac3ce;--ttr-accent:#172332;--ttr-on-accent:#fff;color-scheme:light}
+[data-ttr-theme="black"]{--ttr-bg:#000;--ttr-surface:#121212;--ttr-soft:#222;--ttr-ink:#f5f5f5;--ttr-blue:#8acaff;--ttr-border:#686868;--ttr-accent:#a6d7ff;--ttr-on-accent:#071b2d;color-scheme:dark}
+html body{background:var(--ttr-bg)!important;color:var(--ttr-ink)!important}
+html .ttr-banner{background:var(--ttr-soft)!important;animation:none;box-shadow:none}
+html .ttr-banner::before{background:var(--ttr-surface);box-shadow:none}
+html .ttr-banner::after{display:none}
+html .ttr-banner p{text-shadow:none}
+html .ttr-bar{background:var(--ttr-surface);border-bottom-color:var(--ttr-accent)}
+html .ttr-footer,html .ttr-main>section,html .ttr-main>.section,html .ttr-main .article,html .ttr-main .card,html .ttr-main #root>div>section,html .newsletter-form,html .ttr-highlight-slide,html .ttr-instagram-card,html .ttr-search-results{background:var(--ttr-surface)!important;color:var(--ttr-ink)!important;border-color:var(--ttr-border)!important}
+html .ttr-main>section.newsletter-section,html .ttr-highlights.is-ready .ttr-highlight-slide:not([hidden]),html .ttr-instagram-feed,html #collaboration-contact .collaboration-rules,html .char-row>div{background:var(--ttr-soft)!important;color:var(--ttr-ink)!important;border-color:var(--ttr-border)!important}
+html #collaboration-contact h2,html #collaboration-contact .contact-description,html #collaboration-contact .contact-email,html #collaboration-contact .protection-notice,html .ttr-instagram-status,html .ttr-instagram-copy time,html .ttr-instagram-eyebrow,html .ttr-highlight-kicker,html .ttr-search{color:var(--ttr-ink)}
+html .ttr-nav a,html .ttr-toggle,html .ttr-highlight-controls button,html .ttr-theme-select,html .ttr-search input,html #collaboration-contact input,html #collaboration-contact select,html #collaboration-contact textarea{background:var(--ttr-surface);color:var(--ttr-ink);border-color:var(--ttr-border)}
+html .ttr-nav a:hover,html .ttr-nav a[aria-current],html .ttr-highlight-controls button:hover,html .ttr-search button,html #collaboration-contact button,html .ttr-main .button,html .ttr-instagram-heading>a{background:var(--ttr-accent);color:var(--ttr-on-accent)}
+html .ttr-main a:not(.social):not(.button):not(.card):not(.ttr-highlight-image):not(.ttr-instagram-heading>a):not([style*="color:white"]){color:var(--ttr-blue)}
+html .ttr-main h1,html .ttr-main h2,html .ttr-main h3{color:var(--ttr-ink)}
+html .ttr-search{border-color:var(--ttr-border)}
+html :is(a,button,input,select,textarea):focus-visible{outline:3px solid var(--ttr-blue);outline-offset:4px}
+.ttr-theme-picker{display:flex;align-items:center;gap:8px;font:700 14px/1.4 system-ui;color:var(--ttr-ink)}
+.ttr-theme-select{min-height:44px;max-width:100%;padding:8px 10px;border:1px solid var(--ttr-border);border-radius:8px;font:inherit;cursor:pointer}
+html .ttr-bar-inner{flex-wrap:wrap}
+html .ttr-home{margin-right:auto}
+html .ttr-skip{background:var(--ttr-surface);color:var(--ttr-blue)}
+/* The supplied multicolor logos remain legible on a white artwork plate. */
+[data-ttr-theme="black"] .ttr-banner>a,[data-ttr-theme="black"] .ttr-home{background:#fff;border-radius:12px}
+@media(max-width:480px){.ttr-theme-picker{order:3;flex-basis:100%;justify-content:flex-end}.ttr-theme-select{flex:1;max-width:220px}}

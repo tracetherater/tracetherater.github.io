@@ -201,3 +201,40 @@ carousel.classList.add('is-ready');
 controls.hidden=false;
 show(current,false);
 })();
+
+/* Color preference is shared across pages; storage can be unavailable in private browsers. */
+(()=>{
+'use strict';
+const themes=['blue','yellow','white','black'];
+const root=document.documentElement;
+const key='ttr-theme';
+function apply(theme){
+  root.dataset.ttrTheme=themes.includes(theme)?theme:'blue';
+}
+let saved;
+try{saved=localStorage.getItem(key);}catch{}
+apply(saved);
+const host=document.querySelector('.ttr-bar-inner') || document.getElementById('site-bar');
+if(!host)return;
+const label=document.createElement('label');
+label.className='ttr-theme-picker';
+label.textContent='Color mode';
+const select=document.createElement('select');
+select.className='ttr-theme-select';
+select.id='ttr-theme';
+for(const theme of themes){
+  const option=document.createElement('option');
+  option.value=theme;option.textContent=theme[0].toUpperCase()+theme.slice(1)+' mode';
+  select.append(option);
+}
+select.value=root.dataset.ttrTheme;
+label.append(select);
+host.append(label);
+select.addEventListener('change',()=>{
+  apply(select.value);
+  try{localStorage.setItem(key,select.value);}catch{}
+});
+window.addEventListener('storage',event=>{
+  if(event.key===key){apply(event.newValue);select.value=root.dataset.ttrTheme;}
+});
+})();
