@@ -18,7 +18,6 @@ FEEDS = (
         "https://www.youtube.com/feeds/videos.xml?channel_id=UC4CniKU4t3gQhY4vRvqttBg",
     ),
     ("Reddit", "https://www.reddit.com/r/tracetherater/.rss"),
-    ("Substack", "https://tracetherater.substack.com/feed"),
 )
 POSTS_PER_FEED = 3
 OUTPUT = Path(__file__).resolve().parents[1] / "data" / "latest-posts.json"
