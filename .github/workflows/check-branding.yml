@@ -1,0 +1,38 @@
+name: Check website branding
+on:
+  pull_request:
+    paths:
+      - '*.html'
+      - 'site.css'
+      - 'site.js'
+      - 'assets/trace-*.png'
+      - 'scripts/verify-branding.cjs'
+      - '.github/workflows/check-branding.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser verification tools
+        run: |
+          npm install --prefix "$RUNNER_TEMP/ttr-browser-check" playwright
+          "$RUNNER_TEMP/ttr-browser-check/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Check responsive logos and color modes
+        env:
+          NODE_PATH: ${{ runner.temp }}/ttr-browser-check/node_modules
+        run: node scripts/verify-branding.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: branding-previews
+          path: |
+            scripts/preview-*.png
+            scripts/verification.json
+          if-no-files-found: ignore
