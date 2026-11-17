@@ -19,6 +19,15 @@ document.querySelectorAll('.ttr-nav, .ttr-footer nav').forEach(nav=>{
   const about=nav.querySelector('a[href="about.html"]');
   if(about)about.after(link);else nav.append(link);
 });
+document.querySelectorAll('.ttr-nav').forEach(nav=>{
+  if(nav.querySelector('a[href="index.html#collaboration-contact"]'))return;
+  const link=document.createElement('a');
+  link.className='ttr-contact-menu-link';
+  link.href='index.html#collaboration-contact';
+  link.textContent='Contact me';
+  const newsletter=nav.querySelector('a[href$="#newsletter"]');
+  if(newsletter)newsletter.after(link);else nav.append(link);
+});
 (()=>{'use strict';const bar=document.getElementById('site-bar');if(!bar)return;const button=bar.querySelector('button');const menu=document.getElementById('site-menu');const backdrop=document.createElement('div');backdrop.className='ttr-menu-backdrop';backdrop.setAttribute('aria-hidden','true');const closeButton=document.createElement('button');closeButton.className='ttr-menu-close';closeButton.type='button';closeButton.setAttribute('aria-label','Close menu');closeButton.textContent='×';menu.prepend(closeButton);bar.append(backdrop);const close=returnFocus=>{menu.hidden=true;backdrop.hidden=true;bar.classList.remove('menu-open');document.body.classList.remove('ttr-menu-is-open');button.setAttribute('aria-expanded','false');if(returnFocus)button.focus();};const open=()=>{menu.hidden=false;backdrop.hidden=false;bar.classList.add('menu-open');document.body.classList.add('ttr-menu-is-open');button.setAttribute('aria-expanded','true');closeButton.focus();};close(false);bar.classList.add('enhanced');button.addEventListener('click',()=>{if(button.getAttribute('aria-expanded')==='true')close(false);else open();});closeButton.addEventListener('click',()=>close(true));backdrop.addEventListener('click',()=>close(true));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)close(true);});document.addEventListener('click',e=>{if(!bar.contains(e.target))close(false);});bar.addEventListener('focusout',()=>{setTimeout(()=>{if(!bar.contains(document.activeElement))close(false);},0);});menu.addEventListener('click',e=>{if(e.target.closest('a'))close(false);});})();
 
 /* Site-wide search: discover published pages and search their main content. */
