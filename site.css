@@ -210,3 +210,17 @@ html[data-ttr-theme] body :is(.album-pick:nth-child(2n),.ttr-main>section.newsle
 html .ttr-home,html[data-ttr-theme="black"] .ttr-home{background:var(--ttr-logo-bg);border-radius:12px}
 html[data-ttr-theme="black"] .ttr-banner>a{background:transparent}
 html .ttr-banner img,html .ttr-home img{aspect-ratio:1226/1010;height:auto}
+
+/* November 16 supplied transparent logos. White artwork plates preserve the
+   original black lettering in every color mode without changing the assets. */
+html .ttr-banner::before{background:#fff}
+html .ttr-banner>a,html[data-ttr-theme="black"] .ttr-banner>a{width:min(820px,100%);background:#fff;border-radius:12px;padding:18px}
+.ttr-banner picture{display:block}
+html .ttr-banner img,html .ttr-home img{aspect-ratio:auto;height:auto;object-fit:contain}
+html .ttr-home,html[data-ttr-theme="black"] .ttr-home{flex:0 1 280px;background:#fff;padding:8px 12px;border-radius:10px}
+html .ttr-home img{width:100%}
+@media(max-width:600px){
+ html .ttr-banner>a,html[data-ttr-theme="black"] .ttr-banner>a{width:min(360px,100%);padding:14px}
+ html .ttr-home,html[data-ttr-theme="black"] .ttr-home{flex-basis:220px}
+}
+@media(max-width:380px){html .ttr-home,html[data-ttr-theme="black"] .ttr-home{flex-basis:190px}}
