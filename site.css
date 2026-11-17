@@ -213,7 +213,7 @@ html .ttr-banner img,html .ttr-home img{aspect-ratio:1226/1010;height:auto}
 
 /* November 16 supplied transparent logos. White artwork plates preserve the
    original black lettering in every color mode without changing the assets. */
-html .ttr-banner::before{background:#fff}
+html .ttr-banner::before{background:var(--ttr-surface)}
 html .ttr-banner>a,html[data-ttr-theme="black"] .ttr-banner>a{width:min(820px,100%);background:#fff;border-radius:12px;padding:18px}
 .ttr-banner picture{display:block}
 html .ttr-banner img,html .ttr-home img{aspect-ratio:auto;height:auto;object-fit:contain}
