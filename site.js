@@ -260,3 +260,28 @@ window.addEventListener('storage',event=>{
   if(event.key===key){apply(event.newValue);select.value=root.dataset.ttrTheme;}
 });
 })();
+
+/* Use the supplied white-lettered artwork on dark surfaces. */
+(()=>{
+ const asset='/assets/trace-logo-white-horizontal.png';
+ document.querySelectorAll('.ttr-banner>a,.ttr-home').forEach(link=>{
+   const logo=document.createElement('span');
+   logo.className='ttr-dark-logo';
+   logo.setAttribute('role','img');
+   logo.setAttribute('aria-label','Trace The Rater — Media & Lifestyle Journalism');
+   const horizontal=document.createElement('img');
+   horizontal.src=asset;horizontal.alt='';horizontal.width=1842;horizontal.height=835;
+   horizontal.className='ttr-dark-horizontal';
+   logo.append(horizontal);
+   if(link.closest('.ttr-banner')){
+     const vertical=document.createElement('span');
+     vertical.className='ttr-dark-vertical';
+     ['emblem','lettering'].forEach(part=>{
+       const crop=document.createElement('span');crop.className='ttr-dark-'+part;
+       const image=document.createElement('img');image.src=asset;image.alt='';crop.append(image);vertical.append(crop);
+     });
+     logo.append(vertical);
+   }
+   link.append(logo);
+ });
+})();

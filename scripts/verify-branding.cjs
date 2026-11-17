@@ -23,7 +23,14 @@ const server=http.createServer((req,res)=>{const p=path.join(root,new URL(req.ur
    const state=await page.evaluate(()=>({theme:document.documentElement.dataset.ttrTheme,overflow:document.documentElement.scrollWidth>innerWidth,description:{color:getComputedStyle(document.querySelector('.ttr-banner p')).color,background:getComputedStyle(document.querySelector('.ttr-banner'),'::before').backgroundColor},logos:[...document.querySelectorAll('.ttr-banner img,.ttr-home img')].map(i=>({src:i.currentSrc,loaded:i.complete&&i.naturalWidth>0,width:i.width,height:i.height,backing:getComputedStyle(i.closest('a')).backgroundColor}))}));
    if(state.overflow||state.logos.some(i=>!i.loaded))throw Error(JSON.stringify(state));
    if(!state.logos[0].src.endsWith(width<=600?'trace-logo-vertical.png':'trace-logo-horizontal.png'))throw Error('Incorrect responsive logo');
-   if(state.logos.some(i=>i.backing!=='rgb(255, 255, 255)'))throw Error('Logo needs a white backing');
+   if(theme==='black'){
+    const dark=page.locator('.ttr-home .ttr-dark-horizontal');
+    await dark.evaluate(i=>i.decode());
+    if(!await dark.isVisible())throw Error('Dark scrolling header logo is hidden');
+    const banner=page.locator(width<=600?'.ttr-dark-vertical':'.ttr-banner .ttr-dark-horizontal');
+    if(!await banner.isVisible())throw Error('Dark responsive banner logo is hidden');
+    if(state.logos.some(i=>i.backing!=='rgba(0, 0, 0, 0)'))throw Error('Dark logo backing should be transparent');
+   }else if(state.logos.some(i=>i.backing!=='rgb(255, 255, 255)'))throw Error('Logo needs a white backing');
    if(contrast(state.description.color,state.description.background)<4.5)throw Error('Banner description contrast');
    results.push({width,...state});
    if([390,1440].includes(width)&&['blue','black'].includes(theme))await page.screenshot({path:path.join(__dirname,`preview-${width}-${theme}.png`)});
