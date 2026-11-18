@@ -28,6 +28,67 @@ document.querySelectorAll('.ttr-nav').forEach(nav=>{
   const newsletter=nav.querySelector('a[href$="#newsletter"]');
   if(newsletter)newsletter.after(link);else nav.append(link);
 });
+(()=>{
+  const bar=document.getElementById('site-bar');
+  if(!bar)return;
+  const barInner=bar.querySelector('.ttr-bar-inner');
+  const menuButton=bar.querySelector('.ttr-toggle');
+  if(!barInner||!menuButton)return;
+  barInner.prepend(menuButton);
+  menuButton.setAttribute('aria-label','Open navigation menu');
+  [...menuButton.childNodes].filter(node=>node.nodeType===Node.TEXT_NODE).forEach(node=>node.remove());
+  if(!barInner.querySelector('.ttr-quicklinks')){
+    const quicklinks=document.createElement('nav');
+    quicklinks.className='ttr-quicklinks';
+    quicklinks.setAttribute('aria-label','Quick links');
+    [['Articles','articles.html'],['Socials','index.html#socials']].forEach(([label,href])=>{
+      const link=document.createElement('a');
+      link.href=href;
+      link.textContent=label;
+      quicklinks.append(link);
+    });
+    barInner.append(quicklinks);
+  }
+  const menu=document.getElementById('site-menu');
+  if(!menu||menu.querySelector('.ttr-menu-socials'))return;
+  const socials=[
+    ['YouTube','▶️','https://youtube.com/@tracetherater?si=9Jl0G8VtYfVIJ1CI'],
+    ['Instagram','📸','https://www.instagram.com/tracetherater/'],
+    ['Facebook','📘','https://www.facebook.com/share/19SvhKi3jN/?mibextid=wwXIfr'],
+    ['TikTok','🎵','https://www.tiktok.com/@tracetherater'],
+    ['Reddit','👽','https://www.reddit.com/r/tracetherater/'],
+    ['LinkedIn','💼','https://www.linkedin.com/company/trace-the-rater/'],
+    ['Duolingo','🦉','https://www.duolingo.com/profile/tracetherater'],
+    ['Bluesky','🦋','https://bsky.app/profile/tracetherater.bsky.social'],
+    ['X','𝕏','https://x.com/tracetherater'],
+    ['Album of the Year','💿','https://www.albumoftheyear.org/user/tracetherater/'],
+    ['Letterboxd','🎬','https://boxd.it/o18fH'],
+    ['Discord','💬','https://discord.gg/MTmeT6NGte'],
+    ['Telegram','✈️','https://t.me/tracetherater']
+  ];
+  const group=document.createElement('section');
+  group.className='ttr-menu-socials';
+  group.setAttribute('aria-labelledby','ttr-menu-socials-heading');
+  const heading=document.createElement('h2');
+  heading.id='ttr-menu-socials-heading';
+  heading.textContent='Socials';
+  const links=document.createElement('div');
+  links.className='ttr-menu-social-links';
+  socials.forEach(([label,icon,href])=>{
+    const link=document.createElement('a');
+    link.href=href;
+    link.target='_blank';
+    link.rel='noopener noreferrer';
+    link.setAttribute('aria-label',label);
+    const iconElement=document.createElement('span');
+    iconElement.setAttribute('aria-hidden','true');
+    iconElement.textContent=icon;
+    link.append(iconElement,document.createTextNode(` ${label}`));
+    links.append(link);
+  });
+  group.append(heading,links);
+  menu.append(group);
+})();
 (()=>{'use strict';const bar=document.getElementById('site-bar');if(!bar)return;const button=bar.querySelector('button');const menu=document.getElementById('site-menu');const backdrop=document.createElement('div');backdrop.className='ttr-menu-backdrop';backdrop.setAttribute('aria-hidden','true');const closeButton=document.createElement('button');closeButton.className='ttr-menu-close';closeButton.type='button';closeButton.setAttribute('aria-label','Close menu');closeButton.textContent='×';menu.prepend(closeButton);bar.append(backdrop);const close=returnFocus=>{menu.hidden=true;backdrop.hidden=true;bar.classList.remove('menu-open');document.body.classList.remove('ttr-menu-is-open');button.setAttribute('aria-expanded','false');if(returnFocus)button.focus();};const open=()=>{menu.hidden=false;backdrop.hidden=false;bar.classList.add('menu-open');document.body.classList.add('ttr-menu-is-open');button.setAttribute('aria-expanded','true');closeButton.focus();};close(false);bar.classList.add('enhanced');button.addEventListener('click',()=>{if(button.getAttribute('aria-expanded')==='true')close(false);else open();});closeButton.addEventListener('click',()=>close(true));backdrop.addEventListener('click',()=>close(true));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)close(true);});document.addEventListener('click',e=>{if(!bar.contains(e.target))close(false);});bar.addEventListener('focusout',()=>{setTimeout(()=>{if(!bar.contains(document.activeElement))close(false);},0);});menu.addEventListener('click',e=>{if(e.target.closest('a'))close(false);});})();
 
 /* Site-wide search: discover published pages and search their main content. */
