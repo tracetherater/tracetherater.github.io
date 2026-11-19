@@ -10,6 +10,17 @@ document.querySelectorAll('.ttr-nav, .ttr-footer nav').forEach(nav=>{
   if(newsletter)newsletter.before(link);else nav.append(link);
 });
 
+/* Keep funding accessible in the shared main and footer navigation. */
+document.querySelectorAll('.ttr-nav, .ttr-footer nav').forEach(nav=>{
+  if(nav.querySelector('a[href="funding.html"]'))return;
+  const link=document.createElement('a');
+  link.href='funding.html';
+  link.textContent='Support TTR';
+  if(nav.matches('.ttr-nav'))link.className='ttr-support-menu-link';
+  if(location.pathname==='/funding.html')link.setAttribute('aria-current','page');
+  nav.prepend(link);
+});
+
 /* Keep Favorites reachable from pages with the shared navigation. */
 document.querySelectorAll('.ttr-nav, .ttr-footer nav').forEach(nav=>{
   if(nav.querySelector('a[href="favorites.html"]'))return;
@@ -41,10 +52,14 @@ document.querySelectorAll('.ttr-nav').forEach(nav=>{
     const quicklinks=document.createElement('nav');
     quicklinks.className='ttr-quicklinks';
     quicklinks.setAttribute('aria-label','Quick links');
-    [['Articles','articles.html'],['Socials','index.html#socials']].forEach(([label,href])=>{
+    [['Articles','articles.html'],['Socials','index.html#socials'],['Support TTR','funding.html']].forEach(([label,href])=>{
       const link=document.createElement('a');
       link.href=href;
       link.textContent=label;
+      if(href==='funding.html'){
+        link.className='ttr-support-quicklink';
+        if(location.pathname==='/funding.html')link.setAttribute('aria-current','page');
+      }
       quicklinks.append(link);
     });
     barInner.append(quicklinks);

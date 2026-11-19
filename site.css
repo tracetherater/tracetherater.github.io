@@ -287,3 +287,19 @@ html[data-ttr-theme="black"] .ttr-dark-logo{display:block}
  .ttr-banner .ttr-dark-emblem img{position:absolute;width:317.5862%;max-width:none;height:auto;left:-13.7931%;top:-11.1111%}
  .ttr-banner .ttr-dark-lettering img{position:absolute;width:156.4996%;max-width:none;height:auto;left:-56.4996%;top:-17.3913%}
 }
+
+/* Funding page and shared support entry points. */
+.ttr-funding p{max-width:72ch}
+.ttr-funding>section h2,.ttr-funding .grid h3{margin-top:0}
+.ttr-funding-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.ttr-quicklinks .ttr-support-quicklink{white-space:nowrap}
+.ttr-quicklinks .ttr-support-quicklink,
+html[data-ttr-theme] body .ttr-quicklinks .ttr-support-quicklink,
+html[data-ttr-theme] body .ttr-bar.enhanced.menu-open .ttr-nav .ttr-support-menu-link{
+  background:var(--ttr-accent)!important;
+  color:var(--ttr-on-accent)!important;
+}
+html[data-ttr-theme] body :is(.ttr-support-quicklink,.ttr-support-menu-link):hover{text-decoration:underline}
+@media(max-width:760px){
+  .ttr-bar-inner:has(.ttr-support-quicklink) .ttr-theme-picker{grid-column:1/-1;width:100%;justify-content:flex-end}
+}
