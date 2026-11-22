@@ -74,7 +74,6 @@ document.querySelectorAll('.ttr-nav').forEach(nav=>{
     ['Reddit','👽','https://www.reddit.com/r/tracetherater/'],
     ['LinkedIn','💼','https://www.linkedin.com/company/trace-the-rater/'],
     ['Duolingo','🦉','https://www.duolingo.com/profile/tracetherater'],
-    ['Bluesky','🦋','https://bsky.app/profile/tracetherater.bsky.social'],
     ['X','𝕏','https://x.com/tracetherater'],
     ['Album of the Year','💿','https://www.albumoftheyear.org/user/tracetherater/'],
     ['Letterboxd','🎬','https://boxd.it/o18fH'],
