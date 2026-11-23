@@ -69,6 +69,7 @@ document.querySelectorAll('.ttr-nav').forEach(nav=>{
   const socials=[
     ['YouTube','▶️','https://youtube.com/@tracetherater?si=9Jl0G8VtYfVIJ1CI'],
     ['Instagram','📸','https://www.instagram.com/tracetherater/'],
+    ['Bluesky','🦋','https://bsky.app/profile/tracetherater.bsky.social'],
     ['Facebook','📘','https://www.facebook.com/share/19SvhKi3jN/?mibextid=wwXIfr'],
     ['TikTok','🎵','https://www.tiktok.com/@tracetherater'],
     ['Reddit','👽','https://www.reddit.com/r/tracetherater/'],
